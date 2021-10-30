@@ -42,7 +42,7 @@ $(document).ready(function(){
             при постановке видео на паузу*/
           videoOverlay.onmouseleave = null;
           videoOverlay.onmouseenter = null;
-          
+
       }
   });
 
