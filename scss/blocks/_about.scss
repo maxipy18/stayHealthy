@@ -1,0 +1,130 @@
+.about {
+    padding: 100px 0;
+
+    &-subtitle {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    &-title {
+        max-width: 445px;
+        text-align: center;
+        margin: 0 auto;
+        font-size: 40px;
+        line-height: 60px;
+        font-weight: 600;
+        color: $base-dark-color;
+        margin-bottom: 30px;
+        text-transform: capitalize;
+        position: relative;
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 71px;
+            height: 60px;
+            background-image: url('../img/about-before.svg');
+            top: -31px;
+            left: -70px;
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+            width: 71px;
+            height: 60px;
+            background-image: url('../img/about-after.svg');
+            top: -31px;
+            right: -70px;
+        }
+    }
+
+    &-count {
+        display: flex;
+        justify-content: center;
+        column-gap: 30px;
+        margin-bottom: 50px;
+
+        &-item {
+            width: 255px;
+            text-align: center;
+            position: relative;
+
+            &:nth-child(2)::after {
+                position: absolute;
+                content: '';
+                width: 1px;
+                height: 96px;
+                background-color: $base-dark-color;
+                opacity: 0.4;
+                top: 0;
+                left: -15px;
+            }
+
+            &:nth-child(2)::before {
+                position: absolute;
+                content: '';
+                width: 1px;
+                height: 96px;
+                background-color: $base-dark-color;
+                opacity: 0.4;
+                top: 0;
+                right: -15px;
+            }
+
+            &__value {
+                font-size: 48px;
+                line-height: 64px;
+                font-weight: 800;
+                font-family: 'Inter', sans-serif;
+                color: $base-dark-color;
+            }
+
+            &__text {
+                font-size: 18px;
+                line-height: 32px;
+                font-weight: 400;
+                color: $base-dark-color;
+                text-transform: capitalize;
+            }
+        }
+    }
+
+    &-card {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 30px;
+        row-gap: 30px;
+
+        &-item {
+            width: 540px;
+            display: flex;
+
+            & img {
+                width: 70px;
+                height: 70px;
+                margin-right: 30px;
+            }
+
+            &-content {
+
+                &__title {
+                    font-size: 28px;
+                    line-height: 42px;
+                    font-weight: 600;
+                    text-transform: capitalize;
+                    color: $base-dark-color;
+                    margin-bottom: 5px;
+                }
+
+                &__text {
+                    font-size: 16px;
+                    line-height: 30px;
+                    font-weight: 300;
+                    text-transform: capitalize;
+                    color: #222222;
+                }
+            }
+        }
+    }
+}

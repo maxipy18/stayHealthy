@@ -1,0 +1,25 @@
+.primary-btn {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    color: $white-color;
+    padding: 13px 37px;
+    background: linear-gradient(97.1deg, #3043A9 11.99%, #1F629F 96.6%);
+    border-radius: 28px;
+    border: none;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.secondary-btn {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    color: $white-color;
+    padding: 12px 29px;
+    background: transparent;
+    border-radius: 28px;
+    border: 1px solid $white-color;
+    cursor: pointer;
+    text-transform: capitalize;
+}

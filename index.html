@@ -1,12 +1,694 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StayHealthy</title>
+    <link rel="stylesheet" href="./scss/main.css">    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
+
+    <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+        <symbol id="logo">
+            <path
+                d="M7.728 26.168C5.76 26.168 4.144 25.704 2.88 24.776C1.616 23.832 0.936 22.488 0.84 20.744H5.856C5.904 21.336 6.08 21.768 6.384 22.04C6.688 22.312 7.08 22.448 7.56 22.448C7.992 22.448 8.344 22.344 8.616 22.136C8.904 21.912 9.048 21.608 9.048 21.224C9.048 20.728 8.816 20.344 8.352 20.072C7.888 19.8 7.136 19.496 6.096 19.16C4.992 18.792 4.096 18.44 3.408 18.104C2.736 17.752 2.144 17.248 1.632 16.592C1.136 15.92 0.888 15.048 0.888 13.976C0.888 12.888 1.16 11.96 1.704 11.192C2.248 10.408 3 9.816 3.96 9.416C4.92 9.016 6.008 8.816 7.224 8.816C9.192 8.816 10.76 9.28 11.928 10.208C13.112 11.12 13.744 12.408 13.824 14.072H8.712C8.696 13.56 8.536 13.176 8.232 12.92C7.944 12.664 7.568 12.536 7.104 12.536C6.752 12.536 6.464 12.64 6.24 12.848C6.016 13.056 5.904 13.352 5.904 13.736C5.904 14.056 6.024 14.336 6.264 14.576C6.52 14.8 6.832 15 7.2 15.176C7.568 15.336 8.112 15.544 8.832 15.8C9.904 16.168 10.784 16.536 11.472 16.904C12.176 17.256 12.776 17.76 13.272 18.416C13.784 19.056 14.04 19.872 14.04 20.864C14.04 21.872 13.784 22.776 13.272 23.576C12.776 24.376 12.048 25.008 11.088 25.472C10.144 25.936 9.024 26.168 7.728 26.168ZM24.1708 21.992V26H22.1308C18.6908 26 16.9708 24.296 16.9708 20.888V16.448H15.3148V12.536H16.9708V9.272H21.6988V12.536H24.1468V16.448H21.6988V20.96C21.6988 21.328 21.7788 21.592 21.9388 21.752C22.1148 21.912 22.4028 21.992 22.8028 21.992H24.1708ZM25.5604 19.256C25.5604 17.864 25.8084 16.648 26.3044 15.608C26.8164 14.568 27.5044 13.768 28.3684 13.208C29.2484 12.648 30.2244 12.368 31.2964 12.368C32.2244 12.368 33.0244 12.552 33.6964 12.92C34.3684 13.288 34.8884 13.784 35.2564 14.408V12.536H39.9604V26H35.2564V24.128C34.8884 24.752 34.3604 25.248 33.6724 25.616C33.0004 25.984 32.2084 26.168 31.2964 26.168C30.2244 26.168 29.2484 25.888 28.3684 25.328C27.5044 24.768 26.8164 23.968 26.3044 22.928C25.8084 21.872 25.5604 20.648 25.5604 19.256ZM35.2564 19.256C35.2564 18.392 35.0164 17.712 34.5364 17.216C34.0724 16.72 33.4964 16.472 32.8084 16.472C32.1044 16.472 31.5204 16.72 31.0564 17.216C30.5924 17.696 30.3604 18.376 30.3604 19.256C30.3604 20.12 30.5924 20.808 31.0564 21.32C31.5204 21.816 32.1044 22.064 32.8084 22.064C33.4964 22.064 34.0724 21.816 34.5364 21.32C35.0164 20.824 35.2564 20.136 35.2564 19.256ZM57.1369 12.536L48.5929 32.408H43.4809L46.6969 25.424L41.1769 12.536H46.4089L49.2409 20.168L51.9769 12.536H57.1369ZM73.5114 9.08V26H68.8074V19.208H63.0714V26H58.3674V9.08H63.0714V15.44H68.8074V9.08H73.5114ZM89.0674 19.112C89.0674 19.48 89.0434 19.848 88.9954 20.216H80.0914C80.1394 20.952 80.3394 21.504 80.6914 21.872C81.0594 22.224 81.5234 22.4 82.0834 22.4C82.8674 22.4 83.4274 22.048 83.7634 21.344H88.7794C88.5714 22.272 88.1634 23.104 87.5554 23.84C86.9634 24.56 86.2114 25.128 85.2994 25.544C84.3874 25.96 83.3794 26.168 82.2754 26.168C80.9474 26.168 79.7634 25.888 78.7234 25.328C77.6994 24.768 76.8914 23.968 76.2994 22.928C75.7234 21.888 75.4354 20.664 75.4354 19.256C75.4354 17.848 75.7234 16.632 76.2994 15.608C76.8754 14.568 77.6754 13.768 78.6994 13.208C79.7394 12.648 80.9314 12.368 82.2754 12.368C83.6034 12.368 84.7794 12.64 85.8034 13.184C86.8274 13.728 87.6274 14.512 88.2034 15.536C88.7794 16.544 89.0674 17.736 89.0674 19.112ZM84.2674 17.936C84.2674 17.36 84.0754 16.912 83.6914 16.592C83.3074 16.256 82.8274 16.088 82.2514 16.088C81.6754 16.088 81.2034 16.248 80.8354 16.568C80.4674 16.872 80.2274 17.328 80.1154 17.936H84.2674ZM90.2244 19.256C90.2244 17.864 90.4724 16.648 90.9684 15.608C91.4804 14.568 92.1684 13.768 93.0324 13.208C93.9124 12.648 94.8884 12.368 95.9604 12.368C96.8884 12.368 97.6884 12.552 98.3604 12.92C99.0324 13.288 99.5524 13.784 99.9204 14.408V12.536H104.624V26H99.9204V24.128C99.5524 24.752 99.0244 25.248 98.3364 25.616C97.6644 25.984 96.8724 26.168 95.9604 26.168C94.8884 26.168 93.9124 25.888 93.0324 25.328C92.1684 24.768 91.4804 23.968 90.9684 22.928C90.4724 21.872 90.2244 20.648 90.2244 19.256ZM99.9204 19.256C99.9204 18.392 99.6804 17.712 99.2004 17.216C98.7364 16.72 98.1604 16.472 97.4724 16.472C96.7684 16.472 96.1844 16.72 95.7204 17.216C95.2564 17.696 95.0244 18.376 95.0244 19.256C95.0244 20.12 95.2564 20.808 95.7204 21.32C96.1844 21.816 96.7684 22.064 97.4724 22.064C98.1604 22.064 98.7364 21.816 99.2004 21.32C99.6804 20.824 99.9204 20.136 99.9204 19.256ZM112.009 8.24V26H107.305V8.24H112.009ZM122.632 21.992V26H120.592C117.152 26 115.432 24.296 115.432 20.888V16.448H113.776V12.536H115.432V9.272H120.16V12.536H122.608V16.448H120.16V20.96C120.16 21.328 120.24 21.592 120.4 21.752C120.576 21.912 120.864 21.992 121.264 21.992H122.632ZM133.645 12.416C135.181 12.416 136.397 12.936 137.293 13.976C138.205 15 138.661 16.392 138.661 18.152V26H133.957V18.776C133.957 18.008 133.757 17.408 133.357 16.976C132.957 16.528 132.421 16.304 131.749 16.304C131.045 16.304 130.493 16.528 130.093 16.976C129.693 17.408 129.493 18.008 129.493 18.776V26H124.789V8.24H129.493V14.456C129.909 13.848 130.469 13.36 131.173 12.992C131.893 12.608 132.717 12.416 133.645 12.416ZM155.738 12.536L147.194 32.408H142.082L145.298 25.424L139.778 12.536H145.01L147.842 20.168L150.578 12.536H155.738Z"/>
+        </symbol>
+        <symbol id="check-full">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M11 0C4.925 0 0 4.925 0 11C0 17.075 4.925 22 11 22C17.075 22 22 17.075 22 11C22 4.925 17.075 0 11 0ZM15.768 9.14C15.8558 9.03964 15.9226 8.92274 15.9646 8.79617C16.0065 8.6696 16.0227 8.53591 16.0123 8.40298C16.0018 8.27005 15.9648 8.14056 15.9036 8.02213C15.8423 7.90369 15.758 7.79871 15.6555 7.71334C15.5531 7.62798 15.4346 7.56396 15.3071 7.52506C15.1796 7.48616 15.0455 7.47316 14.9129 7.48683C14.7802 7.50049 14.6517 7.54055 14.5347 7.60463C14.4178 7.66872 14.3149 7.75554 14.232 7.86L9.932 13.019L7.707 10.793C7.5184 10.6108 7.2658 10.51 7.0036 10.5123C6.7414 10.5146 6.49059 10.6198 6.30518 10.8052C6.11977 10.9906 6.0146 11.2414 6.01233 11.5036C6.01005 11.7658 6.11084 12.0184 6.293 12.207L9.293 15.207C9.39126 15.3052 9.50889 15.3818 9.63842 15.4321C9.76794 15.4823 9.9065 15.505 10.0453 15.4986C10.184 15.4923 10.32 15.4572 10.4444 15.3954C10.5688 15.3337 10.6791 15.2467 10.768 15.14L15.768 9.14Z"
+                fill="#63C776" />
+        </symbol>
+    </svg>
+
+    <header class="header">
+        <div class="container">
+            <div class="header-row">
+                <a href="#" class="header-logo">
+                    <svg width="156" height="36" class="header-logo-img">
+                        <use xlink:href="#logo"></use>
+                    </svg>
+                </a>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-list-item">
+                            <a href="#" class="header-link header-link__active">
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav-list-item">
+                            <a href="#" class="header-link">
+                                Program
+                            </a>
+                        </li>
+                        <li class="nav-list-item">
+                            <a href="#" class="header-link">
+                                Nutritions
+                            </a>
+                        </li>
+                        <li class="nav-list-item">
+                            <a href="#" class="header-link">
+                                Pricing
+                            </a>
+                        </li>
+                        <li class="nav-list-item">
+                            <a href="#" class="header-link">
+                                About
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <button class="header-button primary-btn">
+                    Join Now
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <p class="hero-subtitle subtitle">
+                    welcome to the club
+                </p>
+                <h1 class="hero-title">
+                    Choose Your Programs,<br />Pick Your Meal,<br />Let’s Get Healthy.
+                </h1>
+                <p class="hero-text">
+                    StayHealty provides Online Training, and Consultation About Diet and Exercise Tailored Based On User
+                    Needs. We will provide a training model that can be accessed anytime and anywhere with the best
+                    trainers.
+                </p>
+                <div class="hero-buttons">
+                    <button class="primary-btn">
+                        Join Now
+                    </button>
+                    <button class="secondary-btn">
+                        Contact Us
+                    </button>
+                </div>
+                <div class="hero-video">
+                    <div class="video-overlay">
+                        <button class="video-btn">                            
+                            <img class="video-btn-icon" src="./video/play-btn.svg" alt="">
+                        </button>
+                    </div>
+                    <video class="video">
+                        <source src="./video/Handheld weights exercise.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <section class="programs">
+            <div class="container">
+                <p class="programs-subtitle subtitle">
+                    programs
+                </p>
+                <h2 class="programs-title">
+                    We Have a programs to help<br />your workouts
+                </h2>
+            </div>
+            <div class="container-slider">
+                <div class="slider">
+                    <div class="slider-item">
+                        <img src="./img/slider/slide-1.jpg" alt="">
+                        <div class="slider-content">
+                            <h4 class="slider-title">
+                                Full Body Workout
+                            </h4>
+                            <p class="slider-subtitle">
+                                By The Rock
+                            </p>
+                            <p class="slider-text">
+                                You can do it in your own home, all in under 30 mins? just need a mat and som . . .
+                            </p>
+                            <a href="#" class="slider-link">
+                                Check out this program!
+                                <img src="./img/slider/arrow.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="slider-item">
+                        <img src="./img/slider/slide-2.jpg" alt="">
+                        <div class="slider-content">
+                            <h4 class="slider-title">
+                                Bodyweight Workout
+                            </h4>
+                            <p class="slider-subtitle">
+                                By Timi Tarner
+                            </p>
+                            <p class="slider-text">
+                                No need equipments, just your body, your soul, and your spirit. You can do . . .
+                            </p>
+                            <a href="#" class="slider-link">
+                                Check out this program!
+                                <img src="./img/slider/arrow.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="slider-item">
+                        <img src="./img/slider/slide-3.jpg" alt="">
+                        <div class="slider-content">
+                            <h4 class="slider-title">
+                                Dumbell Workout
+                            </h4>
+                            <p class="slider-subtitle">
+                                By Frank Jane
+                            </p>
+                            <p class="slider-text">
+                                This is a workout you can do at home just using a set of barbells. The workout is . . .
+                            </p>
+                            <a href="#" class="slider-link">
+                                Check out this program!
+                                <img src="./img/slider/arrow.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="slider-item">
+                        <img src="./img/slider/slide-1.jpg" alt="">
+                        <div class="slider-content">
+                            <h4 class="slider-title">
+                                Full Body Workout
+                            </h4>
+                            <p class="slider-subtitle">
+                                By The Rock
+                            </p>
+                            <p class="slider-text">
+                                You can do it in your own home, all in under 30 mins? just need a mat and som . . .
+                            </p>
+                            <a href="#" class="slider-link">
+                                Check out this program!
+                                <img src="./img/slider/arrow.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="slider-item">
+                        <img src="./img/slider/slide-2.jpg" alt="">
+                        <div class="slider-content">
+                            <h4 class="slider-title">
+                                Bodyweight Workout
+                            </h4>
+                            <p class="slider-subtitle">
+                                By Timi Tarner
+                            </p>
+                            <p class="slider-text">
+                                No need equipments, just your body, your soul, and your spirit. You can do . . .
+                            </p>
+                            <a href="#" class="slider-link">
+                                Check out this program!
+                                <img src="./img/slider/arrow.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="slider-item">
+                        <img src="./img/slider/slide-3.jpg" alt="">
+                        <div class="slider-content">
+                            <h4 class="slider-title">
+                                Dumbell Workout
+                            </h4>
+                            <p class="slider-subtitle">
+                                By Frank Jane
+                            </p>
+                            <p class="slider-text">
+                                This is a workout you can do at home just using a set of barbells. The workout is . . .
+                            </p>
+                            <a href="#" class="slider-link">
+                                Check out this program!
+                                <img src="./img/slider/arrow.svg" alt="">
+                            </a>
+                        </div>
+                    </div>                                        
+                </div>
+            </div>            
+        </section>
+
+        <section class="nutrition">
+            <div class="container">
+                <div class="nutrition-row">
+                    <div class="nutrition-images">
+                        <div class="nutrition-images-lable-top">
+                            <img src="./img/label-top.png" alt="label">
+                        </div>
+                        <div class="nutrition-images-header">
+                            <img src="./img/Atas.jpg" alt="image">
+                        </div>
+                        <div class="nutrition-images-footer">
+                            <img src="./img/Bawah.jpg" alt="image">
+                        </div>
+                        <div class="nutrition-images-lable-bottom">
+                            <img src="./img/label-bottom.png" alt="label">
+                        </div>
+                    </div>
+                    <div class="nutrition-content">
+                        <p class="nutrition-subtitle subtitle">
+                            nutrition
+                        </p>
+                        <h2 class="nutrition-title">
+                            meal preparation for workout
+                        </h2>
+                        <p class="nutrition-text">
+                            Don’t worry we have the best nutritionist for your workout, firstly consult with our
+                            experts, we can make your meal preparation based on
+                            <span class="nutrition-text__bold">
+                                Total Daily Energy Expenditure.
+                            </span>
+                        </p>
+                        <div class="nutrition-button">
+                            <button class="primary-btn">
+                                Join Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pricing">
+            <div class="container">
+                <p class="pricing-subtitle subtitle">
+                    pricing
+                </p>
+                <h2 class="pricing-title">
+                    choose your package for workout
+                </h2>
+                <div class="pricing-cards">
+                    <div class="pricing-cards-item">
+                        <div class="pricing-cards-main">
+                            <h4 class="pricing-cards-item-title">
+                                Basic
+                            </h4>
+                            <div class="pricing-cards-item-img">
+                                <img src="./img/basic-img.jpg" alt="image">
+                            </div>
+                            <p class="pricing-cards-item-name">
+                                The Rock
+                            </p>
+                            <ul class="pricing-cards-item-list">
+                                <li>
+                                    <svg width="22" height="22">
+                                        <use xlink:href="#check-full"></use>
+                                    </svg>
+                                    <span>
+                                        3 Times A Week
+                                    </span>
+                                </li>
+                                <li>
+                                    <svg width="22" height="22">
+                                        <use xlink:href="#check-full"></use>
+                                    </svg>
+                                    <span>
+                                        Full Zoom
+                                    </span>
+                                </li>
+                                <li>
+                                    <svg width="22" height="22">
+                                        <use xlink:href="#check-full"></use>
+                                    </svg>
+                                    <span>
+                                        PDF Module
+                                    </span>
+                                </li>
+                                <li>
+                                    <svg width="22" height="22">
+                                        <use xlink:href="#check-full"></use>
+                                    </svg>
+                                    <span>
+                                        Meal Preparation
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="pricing-cards-footer">
+                            <p class="pricing-cards-item-price">
+                                Rp500.000
+                                <span>\month</span>
+                            </p>
+                            <div class="pricing-cards-item-button">
+                                <button class="primary-btn">
+                                    workout now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pricing-cards-item">
+                        <div class="pricing-cards-main">
+                            <h4 class="pricing-cards-item-title">
+                                Standart
+                            </h4>
+                            <div class="pricing-cards-item-img">
+                                <img src="./img/standart-img.jpg" alt="image">
+                            </div>
+                            <p class="pricing-cards-item-name">
+                                Anna Jane
+                            </p>
+                            <ul class="pricing-cards-item-list">
+                                <li>
+                                    <svg width="22" height="22">
+                                        <use xlink:href="#check-full"></use>
+                                    </svg>
+                                    <span>
+                                        4 Times A Week
+                                    </span>
+                                </li>
+                                <li>
+                                    <svg width="22" height="22">
+                                        <use xlink:href="#check-full"></use>
+                                    </svg>
+                                    <span>
+                                        Full Zoom
+                                    </span>
+                                </li>
+                                <li>
+                                    <svg width="22" height="22">
+                                        <use xlink:href="#check-full"></use>
+                                    </svg>
+                                    <span>
+                                        PDF Module
+                                    </span>
+                                </li>
+                                <li>
+                                    <svg width="22" height="22">
+                                        <use xlink:href="#check-full"></use>
+                                    </svg>
+                                    <span>
+                                        Meal Preparation
+                                    </span>
+                                </li>
+                                <li>
+                                    <svg width="22" height="22">
+                                        <use xlink:href="#check-full"></use>
+                                    </svg>
+                                    <span>
+                                        Suplement
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="pricing-cards-footer">
+                            <p class="pricing-cards-item-price">
+                                Rp1.000.000
+                                <span>\month</span>
+                            </p>
+                            <div class="pricing-cards-item-button">
+                                <button class="primary-btn">
+                                    workout now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pricing-cards-item">
+                        <div class="pricing-cards-main">
+                            <h4 class="pricing-cards-item-title">
+                                Premium
+                            </h4>
+                            <div class="pricing-cards-item-img">
+                                <img src="./img/premium-img.jpg" alt="image">
+                            </div>
+                            <p class="pricing-cards-item-name">
+                                The Rock
+                            </p>
+                            <ul class="pricing-cards-item-list">
+                                <li>
+                                    <svg width="22" height="22">
+                                        <use xlink:href="#check-full"></use>
+                                    </svg>
+                                    <span>
+                                        4 Times A Week
+                                    </span>
+                                </li>
+                                <li>
+                                    <svg width="22" height="22">
+                                        <use xlink:href="#check-full"></use>
+                                    </svg>
+                                    <span>
+                                        Full Zoom
+                                    </span>
+                                </li>
+                                <li>
+                                    <svg width="22" height="22">
+                                        <use xlink:href="#check-full"></use>
+                                    </svg>
+                                    <span>
+                                        PDF Module
+                                    </span>
+                                </li>
+                                <li>
+                                    <svg width="22" height="22">
+                                        <use xlink:href="#check-full"></use>
+                                    </svg>
+                                    <span>
+                                        Meal Preparation
+                                    </span>
+                                </li>
+                                <li>
+                                    <svg width="22" height="22">
+                                        <use xlink:href="#check-full"></use>
+                                    </svg>
+                                    <span>
+                                        Suplement
+                                    </span>
+                                </li>
+                                <li>
+                                    <svg width="22" height="22">
+                                        <use xlink:href="#check-full"></use>
+                                    </svg>
+                                    <span>
+                                        Gym Equipment
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="pricing-cards-footer">
+                            <p class="pricing-cards-item-price">
+                                Rp2.000.000
+                                <span>\month</span>
+                            </p>
+                            <div class="pricing-cards-item-button">
+                                <button class="primary-btn">
+                                    workout now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="container">
+                <p class="about-subtitle subtitle">
+                    about
+                </p>
+                <h2 class="about-title">
+                    Benefits of joining with us
+                </h2>
+                <div class="about-count">
+                    <div class="about-count-item">
+                        <p class="about-count-item__value">
+                            5+
+                        </p>
+                        <p class="about-count-item__text">
+                            Years Of Journey
+                        </p>
+                    </div>
+                    <div class="about-count-item">
+                        <p class="about-count-item__value">
+                            500+
+                        </p>
+                        <p class="about-count-item__text">
+                            Happy Clients
+                        </p>
+                    </div>
+                    <div class="about-count-item">
+                        <p class="about-count-item__value">
+                            400+
+                        </p>
+                        <p class="about-count-item__text">
+                            Dedicated Members
+                        </p>
+                    </div>
+                </div>
+                <div class="about-card">
+                    <div class="about-card-item">
+                        <img src="./img/flexibleClass-img.svg" alt="logo">
+                        <div class="about-card-item-content">
+                            <h4 class="about-card-item-content__title">
+                                flexible class
+                            </h4>
+                            <p class="about-card-item-content__text">
+                                you can adapt the class to your busy life very easily Workout everytime and everywhere.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="about-card-item">
+                        <img src="./img/bestTrainers-img.svg" alt="logo">
+                        <div class="about-card-item-content">
+                            <h4 class="about-card-item-content__title">
+                                Best Trainers
+                            </h4>
+                            <p class="about-card-item-content__text">
+                                Our trainers is very profesional, very motivated and funny.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="about-card-item">
+                        <img src="./img/trackProgress-img.svg" alt="logo">
+                        <div class="about-card-item-content">
+                            <h4 class="about-card-item-content__title">
+                                Track Progress
+                            </h4>
+                            <p class="about-card-item-content__text">
+                                See your Progress and workout features for tracking your healthy.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="about-card-item">
+                        <img src="./img/meetNewFriends-img.svg" alt="logo">
+                        <div class="about-card-item-content">
+                            <h4 class="about-card-item-content__title">
+                                Meet New Friends
+                            </h4>
+                            <p class="about-card-item-content__text">
+                                we have the big classes in the online workout, you can meet our new member for sharing and chill out.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="cta">
+            <div class="container">
+                <div class="cta-content">
+                    <div class="cta-content-text">
+                        <h2 class="cta-content-text__title">
+                            Become a member of this workout class
+                        </h2>
+                        <input class="cta-content-text__email" type="email" placeholder="Email Address">
+                        <button class="primary-btn">
+                            Join Now
+                        </button>
+                    </div>
+                    <div class="cta-content-img">
+                        <div class="cta-content-img__one">
+                            <img src="./img/cta-img-1.jpg" alt="">
+                            <img src="./img/cta-img-2.jpg" alt="">
+                        </div>
+                        <div class="cta-content-img__two">
+                            <img src="./img/cta-img-3.jpg" alt="">
+                            <img src="./img/cta-img-4.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-item">
+                    <a href="#" class="footer-logo">
+                        <svg width="156" height="36" class="footer-logo-img">
+                            <use xlink:href="#logo"></use>
+                        </svg>
+                    </a>
+                    <p class="footer-text">
+                        Online Training, and Consultation About Diet and Exercise tailored based on user needs. 
+                    </p>
+                    <a href="#" class="footer-social-link">
+                        <img src="./img/youtube-icon.svg" alt="">
+                    </a>
+                    <a href="#" class="footer-social-link">
+                        <img src="./img/facebook.svg" alt="">
+                    </a>
+                    <a href="#" class="footer-social-link">
+                        <img src="./img/instagram.svg" alt="">
+                    </a>
+                </div>
+                <div class="footer-item">
+                    <h4 class="footer-title">
+                        Product
+                    </h4>
+                    <ul class="footer-list">
+                        <li class="footer-list-item">
+                            <a href="#" class="footer-link">
+                                Gym Equipment
+                            </a>
+                        </li>
+                        <li class="footer-list-item">
+                            <a href="#" class="footer-link">
+                                Suplement
+                            </a>
+                        </li>
+                        <li class="footer-list-item">
+                            <a href="#" class="footer-link">
+                                Blog
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-item">
+                    <h4 class="footer-title">
+                        Explore Us
+                    </h4>
+                    <ul class="footer-list">
+                        <li class="footer-list-item">
+                            <a href="#" class="footer-link">
+                                FAQ
+                            </a>
+                        </li>
+                        <li class="footer-list-item">
+                            <a href="#" class="footer-link">
+                                Privacy Policy
+                            </a>
+                        </li>
+                        <li class="footer-list-item">
+                            <a href="#" class="footer-link">
+                                Term and Conditions
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-item">
+                    <h4 class="footer-title">
+                        Contact
+                    </h4>
+                    <ul class="footer-list">
+                        <li class="footer-list-item">
+                            <a href="mailto:hi@stayhealthy.com" class="footer-link">
+                                hi@stayhealthy.com
+                            </a>
+                        </li>
+                        <li class="footer-list-item">
+                            <a href="tel:021-123-636" class="footer-link">
+                                021-123-636
+                            </a>
+                        </li>
+                        <li class="footer-list-item">
+                            <a href="#" class="footer-link">
+                                stayhealthy.com
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <p class="rights">
+                © 2021 StayHealty. All rights reserved
+            </p>
+        </div>
+    </footer>   
     
+    <script src="./js/jquery-3.5.1.min.js"></script>
+    <script src="./js/slick.min.js"></script>
+    <script src="./js/main.js"></script>
+
 </body>
+
 </html>

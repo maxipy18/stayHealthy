@@ -1,0 +1,44 @@
+.header {
+    background-color: $base-dark-color;
+}
+
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 11px 0;       
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    
+    &-img {
+        fill: #fff
+    }
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;    
+    list-style: none;
+
+    &-item:not(:last-child) {
+        margin-right: 40px;
+    }
+}
+
+.header-link {
+    text-decoration: none;
+    color: $white-color;
+    font-weight: 300;
+    font-size: 14px;
+
+    &__active {
+        font-weight: 500;
+    }
+}
